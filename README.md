@@ -1,2 +1,2 @@
 # api-server
-An extensible, authenticated REST server with Q client logger
+An extensible, authenticated REST server with event logging

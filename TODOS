@@ -1,0 +1,19 @@
+Swagger isn't custom
+
+Test coverage
+
+Move method override to middleware
+
+Make sure logging is happening everywhere it ought.
+
+Settle on a final organization of the auth folder
+
+Add github oauth
+
+Add a dynamic way of selecting oauths, where all in teh folder just work
+
+model.model.js should be mongoose.model.js
+
+Add the equivaents for SQL... mongo/sql folders
+
+Use `path` to simplify some of the pathing in the __tests__ folder...

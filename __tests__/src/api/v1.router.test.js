@@ -1,11 +1,18 @@
 'use strict';
 
-const { server } = require('../../server.js');
+describe('v1.router.js', () => {
+  it('should be good', () => {
+    expect(true).toBeTruthy();
+  });
+});
+
+const { server } = require('../../../src/server.js');
 const supertest = require('supertest');
 const request = supertest(server);
 
 // These tests should be made with `supergoose`
 // in a way that takes care of authorization.
+// Make them dynamic rather than about books
 
 xdescribe('Book Routes', () => {
   describe('`GET` `/` route', () => {

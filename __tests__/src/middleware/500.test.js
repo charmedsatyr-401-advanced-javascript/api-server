@@ -1,8 +1,12 @@
 'use strict';
 
-const { server } = require('../../../src/server.js');
-const supertest = require('supertest');
-const request = supertest(server);
+const cwd = process.cwd();
+const { server } = require(`${cwd}/src/server.js`);
+const supergoose = require(`${cwd}/__tests__/supergoose.js`);
+const request = supergoose.server(server);
+
+beforeAll(supergoose.startDB);
+afterAll(supergoose.stopDB);
 
 const error = jest.spyOn(global.console, 'error').mockImplementation(() => {});
 

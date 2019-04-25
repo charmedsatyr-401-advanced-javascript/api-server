@@ -13,7 +13,11 @@ const error = jest.spyOn(global.console, 'error').mockImplementation(() => {});
 describe('`500` error handler', () => {
   describe(`End-to-end tests`, () => {
     it('should return status `500` on a server error', () => {
-      return request.get('/error').then(results => {
+      // This route requires authorization,
+      // but we are not providing credentials
+      // and so get an error
+      const errorRoute = '/signin';
+      return request.post(errorRoute).then(results => {
         expect(results.status).toBe(500);
         expect(error).toHaveBeenCalled();
       });

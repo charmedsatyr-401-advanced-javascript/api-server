@@ -22,8 +22,8 @@ describe('`500` error handler', () => {
       // and so get an error
       const errorRoute = '/signin';
       const results = await request.post(errorRoute);
-      expect(results.status).toBe(500);
-      expect(error).toHaveBeenCalled();
+      await expect(results.status).toBe(500);
+      await expect(error).toHaveBeenCalled();
     });
     it('should not return at status on a good request', async () => {
       const result = await request.get('/');

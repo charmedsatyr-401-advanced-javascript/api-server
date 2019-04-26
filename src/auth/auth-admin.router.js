@@ -19,11 +19,13 @@ router.post('/autopopulate-users', autoPopulateUsers);
  * @param next {function} Express middleware function
  **/
 function getUsers(req, res, next) {
-  Users.find().then(users => {
-    users.forEach(user => {
-      console.log(user);
-    });
-  });
+  Users.find()
+    .then(users => {
+      users.forEach(user => {
+        console.log(user);
+      });
+    })
+    .catch(console.error);
   res.status(200).send('Accessing `/users`...');
 }
 

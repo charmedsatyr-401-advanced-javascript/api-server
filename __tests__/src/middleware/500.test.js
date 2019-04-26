@@ -18,10 +18,8 @@ describe('`500` error handler', () => {
   describe(`End-to-end tests`, () => {
     it('should return status `500` on a server error', async () => {
       expect.assertions(2);
-      // This route requires authorization,
-      // but we are not providing credentials
-      // and so get an error
-      const errorRoute = '/signin';
+      // This is the dummy error route
+      const errorRoute = '/api/error';
       const result = await request.post(errorRoute);
       expect(result.status).toBe(500);
       expect(error).toHaveBeenCalled();
